@@ -26,5 +26,7 @@ public class Main {
         strings = list.stringCut(entireText);
         list.getWordCounter(strings);
         list.getKeyValues();
+        list.sortKeysAlphabetically();
+        list.sortValuesAscendingAndDescending();
     }
 }
