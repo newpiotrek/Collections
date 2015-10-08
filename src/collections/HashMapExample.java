@@ -1,15 +1,21 @@
 package collections;
 
+import objects.Word;
+
 import java.lang.reflect.Array;
 import java.util.*;
 
 /**
  * Created by piotrek on 10/5/2015.
  */
+// spróbuj zrobi? jeszcze sortowanie po kluczach u?ywaj?c TreeMap (mo?e Ci by? potrzebne skorzystanie z Comparable :) ). Druga kwestia, któr? mo?esz jeszcze zrobi? to zamieni? String na Word jako klucz (w osobnej klasie).
+// clean code, treemap, skasowac Comparable(compareTo) i zobaczyc komunikaty, jak zmienisz w HashaMap'ie ze String(klucz w mapie) na Word i zobacz jak dziala metoda HashCode
 public class HashMapExample {
 
 
     private HashMap<String,Integer> wordCounter = new HashMap<>();
+
+
     public HashMapExample() {
         this.wordCounter = wordCounter;
     }
@@ -69,5 +75,19 @@ public class HashMapExample {
                 }
             }
         }
+    }
+
+    private TreeMap<String, Integer> wordCounterTreeMap = new TreeMap<>(wordCounter);
+    private TreeMap<String, Integer> wordCounterTreeMapReverse = new TreeMap<>(Collections.reverseOrder());
+
+    public void insertDataToTreeMap(){
+        wordCounterTreeMap.putAll(wordCounter);
+        wordCounterTreeMapReverse.putAll(wordCounter);
+    }
+    public void printTreeMap(){
+        System.out.println("\nBelow TreeMap\n");
+        System.out.println(wordCounterTreeMap);
+        System.out.println("\nBelow TreeMap in Reverse\n");
+        System.out.println(wordCounterTreeMapReverse);
     }
 }
